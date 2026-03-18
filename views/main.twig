@@ -1,0 +1,16 @@
+{% extends "__layout.twig" %}
+
+{% block content %}
+
+{% for item in menu_items %}
+{% import "__layout.twig" as macro %}
+    <ul class="list-group list-group-horizontal">
+<li class = "list-group-item w-100">
+   {{ macro.btn(item.title,"/"~ item.url_title, true) }}  
+   {{ macro.btn("Картинка","/"~ item.url_title ~"/image", false, "warning") }}  
+   {{ macro.btn("Описание","/"~ item.url_title ~"/info", false, "warning") }}  
+</li>
+</ul>
+{% endfor %}
+
+{% endblock %
